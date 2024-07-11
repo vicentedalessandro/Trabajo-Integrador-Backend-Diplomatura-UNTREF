@@ -4,20 +4,18 @@ const patchElectronicById = async (req, res) => {
   const { id } = req.params
   const body = req.body
 
-  const patchElectronic = new Electronic(
-    {
-      codigo: body.codigo,
-      nombre: body.nombre,
-      precio: body.precio,
-      categorias: body.categorias
-    }
-  )
+  const patchElectronic = {
+    codigo: body.codigo,
+    nombre: body.nombre,
+    precio: body.precio,
+    categorias: body.categorias
+  }
 
   try {
     const result = await Electronic.findByIdAndUpdate(id, { $set: patchElectronic }, { new: true })
-    result
+    !result
       ? res.status(404).json({ response: 'Electronic product not found to patch.' })
-      : res.status(201).json(result)
+      : res.status(200).json(result)
   } catch (e) {
     res.status(500).json(
       {

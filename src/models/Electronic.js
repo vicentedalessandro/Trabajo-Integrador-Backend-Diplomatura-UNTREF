@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+import { Schema, model } from 'mongoose'
 
-const electronicSchema = new mongoose.Schema(
+const electronicSchema = new Schema(
   {
     codigo: {
       type: Number,
@@ -30,6 +30,6 @@ electronicSchema.set('toJSON', {
   }
 })
 
-const Electronic = mongoose.model('Electronic', electronicSchema)
+const Electronic = model('Electronic', electronicSchema)
 
 export { Electronic }

@@ -1,0 +1,7 @@
+### Modificar de forma parcial un producto electronico por _id
+PATCH http://localhost:3000/api/electronics/6690450b637c4ff5ae13ee00
+content-type: application/json
+
+{
+    "precio": 99.99
+}

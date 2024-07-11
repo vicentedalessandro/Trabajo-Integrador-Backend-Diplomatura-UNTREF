@@ -1,0 +1,2 @@
+### Obtener productos electronicos por nombre
+GET http://localhost:3000/api/electronics?name=tablet

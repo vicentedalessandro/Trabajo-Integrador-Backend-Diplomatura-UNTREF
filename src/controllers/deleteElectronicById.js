@@ -5,9 +5,9 @@ const deleteElectronicById = async (req, res) => {
 
   try {
     const result = await Electronic.findByIdAndDelete(id)
-    result
-      ? res.status(200).json({ response: 'Electronic product removed.' })
-      : res.status(404).json({ response: 'Electronic product not found to delete.' })
+    !result
+      ? res.status(404).json({ response: 'Electronic product not found to delete.' })
+      : res.status(200).json({ response: 'Electronic product removed.' })
   } catch (e) {
     res.status(500).json(
       {

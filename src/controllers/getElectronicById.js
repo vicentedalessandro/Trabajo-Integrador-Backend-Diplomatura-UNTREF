@@ -5,9 +5,9 @@ const getElectronicById = async (req, res) => {
 
   try {
     const electronic = await Electronic.findById(id)
-    electronic
-      ? res.status(200).json(electronic)
-      : res.status(404).json({ response: 'Electronic product not found.' })
+    !electronic
+      ? res.status(404).json({ response: 'Electronic product not found.' })
+      : res.status(200).json(electronic)
   } catch (e) {
     res.status(500).json(
       {

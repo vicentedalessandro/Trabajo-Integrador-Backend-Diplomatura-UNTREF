@@ -2,7 +2,7 @@ import express from 'express'
 import morgan from 'morgan'
 import { connectToDB } from './db/conecction.js'
 import { pageNotFound } from './middleware/pageNotFound.js'
-import { router } from './routes/routes.js'
+import { electronicRoutes } from './routes/routes.js'
 
 process.loadEnvFile()
 
@@ -16,13 +16,14 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 // Router
-app.use('/api/electronics', router)
+app.use('/api/electronics', electronicRoutes)
 
 // Main route
 app.get('/', (req, res) => {
   res.status(200).json({ response: 'The server is listening...' })
 })
 
+// 404
 app.use(pageNotFound)
 
 const PORT = process.env.PORT || 3000

@@ -1,0 +1,10 @@
+### Añadir un nuevo producto electronico
+POST http://localhost:3000/api/electronics/
+content-type: application/json
+
+{
+    "codigo": 15243,
+    "nombre": "Monitor LG 23.5 Pulgadas 1920x1080 75hz",
+    "precio": 899,
+    "categorias": ["Computacion","Electronica"]
+}

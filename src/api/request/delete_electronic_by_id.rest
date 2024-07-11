@@ -1,0 +1,2 @@
+### Borrar un producto electronico por _id
+DELETE http://localhost:3000/api/electronics/6690430825315e06af1e3966

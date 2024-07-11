@@ -1,0 +1,2 @@
+### Obtener un producto electronico por _id
+GET http://localhost:3000/api/electronics/6685ac0e26b2f74a83563b78

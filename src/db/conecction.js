@@ -1,8 +1,8 @@
-import mongoose from 'mongoose'
+import { connect } from 'mongoose'
 import { URI } from '../config/mongodb.js'
 
 const connectToDB = () => {
-  mongoose.connect(URI)
+  connect(URI)
     .then(() => console.log('Connection to the database successfully.'))
     .catch((e) => console.error('Error connecting database', e))
 }

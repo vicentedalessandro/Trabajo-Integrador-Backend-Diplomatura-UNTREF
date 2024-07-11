@@ -9,4 +9,6 @@ router.get('/', orchestrator.getElectronics)
   .patch('/:id', orchestrator.patchElectronicById)
   .delete('/:id', orchestrator.deleteElectronicById)
 
-export { router }
+const electronicRoutes = router
+
+export { electronicRoutes }
