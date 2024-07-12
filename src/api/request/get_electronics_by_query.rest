@@ -1,2 +1,8 @@
 ### Obtener productos electronicos por nombre
 GET http://localhost:3000/api/electronics?name=tablet
+
+### Obtener productos electronicos por categoria
+GET http://localhost:3000/api/electronics?category=telefonía
+
+### Obtener productos electronicos por nombre y categoria
+GET http://localhost:3000/api/electronics?name=tablet?category=telefonía

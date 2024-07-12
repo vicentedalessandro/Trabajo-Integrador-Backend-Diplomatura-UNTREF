@@ -1,8 +1,12 @@
 import { Electronic } from '../models/Electronic.js'
 
 const getElectronics = async (req, res) => {
-  const { name } = req.query
-  const query = !name ? {} : { nombre: { $regex: name, $options: 'i' } }
+  const { name, category } = req.query
+  const query = !name
+    ? !category
+        ? {}
+        : { categorias: { $regex: category, $options: 'i' } }
+    : { nombre: { $regex: name, $options: 'i' } }
 
   try {
     const electronics = await Electronic.find(query)
